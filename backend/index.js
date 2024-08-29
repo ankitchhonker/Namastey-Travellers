@@ -14,12 +14,11 @@ const UserModel = require("./models/UserModel");
 const MONGO_URL = process.env.MONGO_URL;
 const PORT = process.env.PORT || 3002 ;
 
-app.use(cors({ origin: ["https://stock-trading-project.onrender.com/"],
+app.use(cors({
+    origin: ["https://stock-trading-project.onrender.com", "https://stock-trading-project-2.onrender.com/"],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,}));
-    app.use(cors({ origin: ["http://localhost:3001"],
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true,}));
+    credentials: true,
+}));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/", authRoute);
