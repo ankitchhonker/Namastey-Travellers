@@ -1,0 +1,9 @@
+# Ignore node_modules directories
+backend/node_modules/
+frontend/node_modules/
+dashboard/node_modules/
+
+# Ignore package-lock.json files
+backend/package-lock.json
+frontend/package-lock.json
+dashboard/package-lock.json
