@@ -90,7 +90,8 @@ app.post("/newOrder", async (req, res) => {
 });
 app.listen(PORT, () => {
     console.log("App Started");
-    mongoose.connect(MONGO_URL)
-    .then(() => console.log("DB Connection successful!"))
-    .catch(err => console.error("DB Connection failed:", err));
-});
+    mongoose.connect(MONGO_URL);
+    console.log("DB Connection successful!");
+}  
+     
+)

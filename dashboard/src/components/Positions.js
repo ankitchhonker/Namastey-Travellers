@@ -3,7 +3,7 @@ import axios from "axios";
 const Positions = () => {
   const [allPostions,setAllPositions]=useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:3002/allPositions").then((res)=>{
+    axios.get("https://stock-trading-project-1.onrender.com/allPositions").then((res)=>{
       setAllPositions(res.data);
     })
   })

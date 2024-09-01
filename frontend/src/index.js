@@ -31,7 +31,7 @@ function App() {
     const verifyCookie = async () => {
      
       const { data } = await axios.post(
-        "http://localhost:3002",
+        "https://stock-trading-project-1.onrender.com/",
         {},
         { withCredentials: true }
       );
