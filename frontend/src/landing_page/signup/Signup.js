@@ -35,7 +35,7 @@ function Signup() {
     console.log("form submitted");
     try {
       const { data } = await axios.post(
-        "https://stock-trading-project-1.onrender.com/signup",
+        "https://stock-trading-project-3.onrender.com/signup",
         {
           ...inputValue,
         },
