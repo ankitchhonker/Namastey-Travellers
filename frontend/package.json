@@ -15,7 +15,11 @@
     "react-toastify": "^10.0.5",
     "web-vitals": "^2.1.4"
   },
+<<<<<<< HEAD
   "devDependencies": {
+=======
+   "devDependencies": {
+>>>>>>> 691b983a2ad57dcb87aeed35c1a51e9b6d5e3a23
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   },
   "scripts": {
