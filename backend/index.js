@@ -28,7 +28,9 @@ app.use("/", authRoute);
 
 
 // Routes
-
+app.get("/",(req,res)=>{
+    res.send("server Listing");
+})
 
 app.get("/allHoldings", async (req, res) => {
     try {
