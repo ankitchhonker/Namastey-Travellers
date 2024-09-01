@@ -1,4 +1,4 @@
-const {Schema} = require("mongoose");
+const {Schema, default: mongoose} = require("mongoose");
 const bcrypt = require("bcrypt");
 const HoldingSchma = new Schema({
     name: String,
@@ -38,12 +38,27 @@ const userSchema = new Schema({
       type: Date,
       default: new Date(),
     },
+    order:[
+    {type: mongoose.Schema.ObjectId,
+    ref:"Order"}
+    ]
   });
 
   userSchema.pre("save", async function () {
     this.password = await bcrypt.hash(this.password, 12);
   });
 
+   
+
+const OrdersSchema = new Schema({
+  name: String,
+  qty: Number,
+  price: Number,
+  mode: String,
+});
+
  
 
-module.exports = {HoldingSchma,PositionsSchma,userSchema};
+ 
+
+module.exports = {HoldingSchma,PositionsSchma,userSchema,OrdersSchema};

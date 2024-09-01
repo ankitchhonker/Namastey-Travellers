@@ -5,6 +5,8 @@ import {BarChartOutlined, KeyboardArrowDown,KeyboardArrowUp, MoreHoriz} from '@m
 import { Grow, Tooltip } from "@mui/material";
 import { Doughnut } from "react-chartjs-2";
 import { DoughnutChart } from "./DoughtNut";
+import GeneralContext from "./GeneralContex";
+import { useContext } from "react";
 const WatchList = () => {
 const labels = watchlist.map((subArray)=>subArray["name"]);
 const data = {
@@ -70,6 +72,7 @@ let WatchListItem = ({stock})=>{
   let handleMouseLeave = ()=>{
     setShowWatchListAction(false);
   }
+  
 
   return(
     <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -87,6 +90,12 @@ let WatchListItem = ({stock})=>{
 }
 
 let WatchListActions = ({uid})=>{
+  const generalContext = useContext(GeneralContext);
+
+  const handleBuyClick = () => {
+    generalContext.openBuyWindow(uid);
+  }; 
+
  return(
   <span className="actions">
     <span>
@@ -95,7 +104,7 @@ let WatchListActions = ({uid})=>{
        placement="top"
        TransitionComponent={Grow}
        >
-        <button className="buy">Buy</button>
+        <button className="buy" onClick={handleBuyClick}>Buy</button>
        </Tooltip>
        <Tooltip
        title="Sell (B)"

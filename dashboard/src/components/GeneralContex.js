@@ -1,6 +1,6 @@
-
 import React, { useState } from "react";
- 
+
+import BuyActionWindow from "./ActionBuyWindow";
 
 const GeneralContext = React.createContext({
   openBuyWindow: (uid) => {},
@@ -29,7 +29,7 @@ export const GeneralContextProvider = (props) => {
       }}
     >
       {props.children}
-       
+      {isBuyWindowOpen && <BuyActionWindow uid={selectedStockUID} />}
     </GeneralContext.Provider>
   );
 };
