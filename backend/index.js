@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3002;
 
 // Middleware configuration
 app.use(cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: ["https://stock-trading-project-frontend.onrender.com", "http://localhost:3001"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
